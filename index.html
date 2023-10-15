@@ -1,7 +1,97 @@
 <html>
 
+<head>
+    <script src="math.js"></script>
+    <style>
+        .grid {
+            border: thin black solid;
+        }
+        
+        .title {
+            width: 100px;
+            display: inline-block;
+        }
+        
+        .inputArea {
+            padding-bottom: 15px;
+            padding-right: 15px;
+        }
+        
+        .inputArea input {
+            max-width: 75px;
+        }
+    </style>
+</head>
+
 <body>
     <h1>Poke Utils</h1>
+
+    <table>
+        <tr>
+            <td>
+                <div class="inputArea">
+                    <div class="title">Level</div>
+                    <input type="number" value="5" id="levelField">
+                </div>
+            </td>
+            <td>
+                <div class="inputArea">
+                    <div class="title">Defending Stat</div>
+                    <input type="number" value="10" id="defenceField">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="inputArea">
+                    <div class="title">Power</div>
+                    <input type="number" value="60" id="powerField">
+                </div>
+            </td>
+            <td>
+                <div class="inputArea">
+                    <div class="title">Damage</div>
+                    <input type="number" value="5" id="damageField">
+                </div>
+            </td>
+        </tr>
+    </table>
+
+
+    <table class="">
+        <tr class="grid">
+            <th class="grid">Type 1 Effectiveness</th>
+            <th class="grid">Type 2 Effectiveness</th>
+        </tr>
+        <tr class="grid">
+            <td class="grid">
+                <input type="radio" name="typeOne" id="typeOneNotVery" value="0.5">
+                <label for="typeOneNotVery">Not Very</label><br>
+                <input type="radio" name="typeOne" id="typeOneNormal" checked="true" value="1">
+                <label for="typeOneNormal">Normal</label><br>
+                <input type="radio" name="typeOne" id="typeOneSuper" value="2">
+                <label for="typeOneSuper">Super</label><br>
+            </td>
+            <td class="grid">
+                <input type="radio" name="typeTwo" id="typeTwoNotVery" value="0.5">
+                <label for="typeTwoNotVery">Not Very</label><br>
+                <input type="radio" name="typeTwo" id="typeTwoNormal" checked="true" value="1">
+                <label for="typeTwoNormal">Normal</label><br>
+                <input type="radio" name="typeTwo" id="typeTwoSuper" value="2">
+                <label for="typeTwoSuper">Super</label><br>
+            </td>
+            <td>
+                <input type="checkbox" name="optional" id="optCrit">
+                <label for="optCrit">Crit</label><br>
+                <input type="checkbox" name="optional" id="optSTAB">
+                <label for="optSTAB">STAB</label><br>
+            </td>
+        </tr>
+    </table>
+    <button onclick="calculate()">Calculate</button>
+    <p class="output" id="output">
+
+    </p>
 </body>
 
 </html>
